@@ -18,7 +18,50 @@ public class Main {
         int discipline = input.nextInt();
         
         focus = myFocus();
+
+        System.out.print("What is your Complication Range?");
+        int compRange = 21 - input.nextInt();
         
+        ArrayList<int> rolls = new ArrayList<int>();
+        Random rand = new Random();
+        for (i = 0; i < numberOfDice; ++i){
+            rolls.add(rand.nextInt(20) + 1);
+        }
+
+        System.out.print("What is your difficulty?");
+        int difficulty = input.nextInt();
+
+        int successes = 0;
+        int complications = 0;
+
+        for (int i : rolls){
+            if ((focus == true && i <= discipline) || i == 1){
+                successes = successes + 2;
+            }
+            else if (i <= (attribute + discipline)){
+                successes = successes + 1;
+            }
+            else {
+                successes = successes;
+            }
+            if (i >= compRange){
+                complications = complications + 1:
+            }
+        }
+        
+        int momentum = 0;
+        if (successes => difficulty){
+            momentum = successes - difficulty;
+            System.out.print("You succeeded with " + momentum + " momentum and " + complications + " complications.");
+        }
+        else {
+            System.out.print("You failed with " + " complications.");
+        }
+
+        
+
+
+
     }
 
     public static boolean myFocus(){
