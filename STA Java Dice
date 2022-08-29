@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String args[])
-    {
+    {   
+        Boolean focus;
+
         System.out.print("How many dice are you rolling?");
         Scanner input = new Scanner(System.in);
         int numberOfDice = input.nextInt();
@@ -15,9 +17,29 @@ public class Main {
         System.out.print("What is your Discipline rating?");
         int discipline = input.nextInt();
         
-        System.out.println("Do you have an applicable focus?");
-        System.out.print("Answer yes/no");
-
+        focus = myFocus();
         
     }
+
+    public static boolean myFocus(){
+
+        System.out.println("Do you have an applicable focus?");
+            Boolean focus;
+            System.out.print("Answer yes/no");
+            String focusAnswer = input.nextLine();
+
+            focusAnswer = focusAnswer.toUpperCase();
+            if (focusAnswer.equals("YES")){
+                focus = true;
+            }
+            else if (focusAnswer.equals("NO")){
+                focus = false;
+            }
+            else {
+                System.out.println("Please answer \"Yes\" or \"No\"")
+                focus = myFocus();
+            }
+            return focus;
+    }
+
 }
