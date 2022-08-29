@@ -58,10 +58,11 @@ public class Main {
             System.out.print("You failed with " + " complications.");
         }
 
-        
+        if (momentum > 0){
+            momentumCalculator(momentum);
+        }
 
-
-
+        return;
     }
 
     public static boolean myFocus(){
@@ -83,6 +84,10 @@ public class Main {
                 focus = myFocus();
             }
             return focus;
+    }
+
+    public static void momentumCalculator(int m){
+        
     }
 
 }
