@@ -58,6 +58,9 @@ public class Main {
             System.out.print("You failed with " + " complications.");
         }
 
+        Boolean challenge;
+        challenge = myChallenge();
+
         if (momentum > 0){
             momentumCalculator(momentum);
         }
@@ -65,7 +68,7 @@ public class Main {
         return;
     }
 
-    public static boolean myFocus(){
+    public static Boolean myFocus(){
 
         System.out.println("Do you have an applicable focus?");
             Boolean focus;
@@ -84,6 +87,26 @@ public class Main {
                 focus = myFocus();
             }
             return focus;
+    }
+
+    public static Boolean myChallenge(){
+        System.out.println("Will you need to roll Challenge dice?")
+        Boolean challenge;
+        System.out.print("Answer yes/no")
+        String challengeAnswer = input.nextLine();
+
+        challengeAnswer = challengeAnswer.toUpperCase();
+        if (challengeAnswer.equals("YES")){
+            challenge = true;
+        }
+        else if (challengeAnswer.equals("NO")){
+            focus = false;
+        }
+        else{
+            System.out.println("Please answer \"Yes\" or \"No\"")
+            challenge = myChallenge();
+        }
+        return challenge;
     }
 
     public static void momentumCalculator(int m){
