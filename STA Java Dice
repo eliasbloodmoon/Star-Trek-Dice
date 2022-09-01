@@ -62,7 +62,7 @@ public class Main {
         challenge = myChallenge();
 
         if (momentum > 0){
-            momentumCalculator(momentum);
+            momentumCalculator(momentum, challenge);
         }
 
         return;
@@ -109,7 +109,7 @@ public class Main {
         return challenge;
     }
 
-    public static void momentumCalculator(int m){
+    public static void momentumCalculator(int m, Boolean c){
         
     }
 
