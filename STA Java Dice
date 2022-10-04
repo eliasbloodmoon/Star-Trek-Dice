@@ -45,7 +45,7 @@ public class Main {
                 successes = successes;
             }
             if (i >= compRange){
-                complications = complications + 1:
+                complications = complications + 1;
             }
         }
         
@@ -83,16 +83,16 @@ public class Main {
                 focus = false;
             }
             else {
-                System.out.println("Please answer \"Yes\" or \"No\"")
+                System.out.println("Please answer \"Yes\" or \"No\"");
                 focus = myFocus();
             }
             return focus;
     }
 
     public static Boolean myChallenge(){
-        System.out.println("Will you need to roll Challenge dice?")
+        System.out.println("Will you need to roll Challenge dice?");
         Boolean challenge;
-        System.out.print("Answer yes/no")
+        System.out.print("Answer yes/no");
         String challengeAnswer = input.nextLine();
 
         challengeAnswer = challengeAnswer.toUpperCase();
@@ -110,7 +110,74 @@ public class Main {
     }
 
     public static void momentumCalculator(int m, Boolean c){
-        
+        int answer;
+
+        if (c){
+            System.out.println("How many challenge dice are we rolling?")
+            int challengeDice = input.nextInt();
+            ArrayList<int> cRolls = new ArrayList<int>();
+            for (i = 0; i < challengeDice; ++i){
+                cRolls.add(rand.nextInt(6) + 1);
+                System.out.print("Your challenge rolls are: ");
+                for (int i : cRolls) {
+                    if (i == 1){
+                        System.out.print("1 ");
+                    }
+                    if (i == 2){
+                        System.out.print("2 ");
+                    }
+                    if (i == 3 || i == 4){
+                        System.out.print("Blank ");
+                    }
+                    if (i == 5 || i == 6){
+                        System.out.print("Effect ");
+                    }
+                }
+            }
+        }
+
+        while (m > 0){
+            System.out.println("Momentum Spend Choices");
+            System.out.println("1: Basic Spends");
+            if (c) {
+            System.out.println("2: Combat Spends");
+            System.out.println("3: Extended Task Spends");
+            }
+            System.out.println("0: Bank Momentum");
+
+            answer = input.nextInt();
+
+            if (answer == 1) {
+                int basicNum = 5;
+                while (basicNum != 0 && m > 0){
+                    System.out.println("Basic Momentum Spends");
+                    System.out.println("1: Create Advantage (2 cost)");
+                    System.out.println("2: Obtain Information (1 cost)");
+                    System.out.println("You have " + m + " momentum");
+                    System.out.println("Enter 0 to return");
+                    basicNum = input.nextInt();
+                    if (basicNum = 1){
+                        System.out.println("Create an Advantage based on your roll");
+                        m = m-2;
+                    }
+                    else if (basicNum = 2){
+                        System.out.println("Ask a question of the GM");
+                        m = m-1;
+                    }
+                    else if (basicNum = 0){
+                        System.out.println("Return to main menu");
+                    }
+                    else {
+                        System.out.println("Please insert a proper menu response");
+                    }
+                }
+            }
+
+            if (c && answer == 2){
+                
+            }
+
+        }
     }
 
 }
