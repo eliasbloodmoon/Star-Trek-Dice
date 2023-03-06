@@ -136,7 +136,7 @@ public class Main {
             }
         }
 
-        while (m > 0){
+        while (m != 0){
             System.out.println("Momentum Spend Choices");
             System.out.println("1: Basic Spends");
             if (c) {
