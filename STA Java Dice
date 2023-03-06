@@ -55,7 +55,7 @@ public class Main {
             System.out.print("You succeeded with " + momentum + " momentum and " + complications + " complications.");
         }
         else {
-            System.out.print("You failed with " + " complications.");
+            System.out.print("You failed with " + complications + " complications.");
         }
 
         Boolean challenge;
