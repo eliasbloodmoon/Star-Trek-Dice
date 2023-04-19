@@ -3,7 +3,6 @@ from focusCall import *
 from momentumCall import *
 from challengeCall import *
 
-
 def main():
     focus = my_focus()
     comp_range = 21 - int(input("What is your Complication Range? "))
