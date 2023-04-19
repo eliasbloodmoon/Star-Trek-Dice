@@ -50,8 +50,11 @@ def momentum_calculator(m, c):
                     
                     basic_num = int(input_())
                     if basic_num == 1:
-                        print("Create an Advantage based on your roll")
-                        m -= 2
+                        if m < 2:
+                            print("not a valid option")
+                        else:
+                            print("Create an Advantage based on your roll")
+                            m -= 2
                     elif basic_num == 2:
                         print("Ask a question of the GM")
                         m -= 1
@@ -79,14 +82,20 @@ def momentum_calculator(m, c):
                         print("One extra damage dealt")
                         m -= 1
                     elif combat_num == 2:
-                        print("Your opponent has been disarmed, their weapon within their Reach")
-                        m -= 2
+                        if m < 2:
+                            print("not a valid option")
+                        else:
+                            print("Your opponent has been disarmed, their weapon within their Reach")
+                            m -= 2
                     elif combat_num == 3:
                         print("Perform an extra Minor Action")
                         m -= 1
                     elif combat_num == 4:
-                        print("Your team keeps the initiative")
-                        m -= 2
+                        if m < 2:
+                            print("not a valid option")
+                        else:
+                            print("Your team keeps the initiative")
+                            m -= 2
                     elif combat_num == 5:
                         print("Ignore 2 of your target's Resistance")
                         m -= 1
@@ -120,11 +129,17 @@ def momentum_calculator(m, c):
                         print()
                         m -= 1
                     elif combat_num == 7:
-                        print("A second target withing Reach of your target is also affected by the attack, and suffers half damage rounding down")
-                        m -= 2
+                        if m < 2:
+                            print("not a valid option")
+                        else:
+                            print("A second target withing Reach of your target is also affected by the attack, and suffers half damage rounding down")
+                            m -= 2
                     elif combat_num == 8:
-                        print("Do one normal task as a minor action, increasing the difficulty due to speed")
-                        m -= 2
+                        if m < 2:
+                            print("not a valid option")
+                        else:
+                            print("Do one normal task as a minor action, increasing the difficulty due to speed")
+                            m -= 2
                     elif combat_num == 0:
                         print("Return to Main Menu")
                     else:
